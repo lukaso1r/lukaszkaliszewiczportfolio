@@ -165,13 +165,15 @@ export default function Home() {
 
             <div className="techGroup flex flex-col gap-3">
               <div className="flex flex-row gap-3 text-slate-400">
-                <TableOfContents className="w-5"/> CMS / Headless CMS / Ecommerce
+                <TableOfContents className="w-5"/> CMS / Headless CMS / Ecommerce / HIS
               </div>
 
               <div className="techs flex flex-row flex-wrap gap-2 ">
                 <Button variant="outline" size="sm">Strapi</Button>
                 <Button variant="outline" size="sm">Wordpress</Button>
                 <Button variant="outline" size="sm">Shoper</Button>
+                <Button variant="outline" size="sm">Optimed NXT</Button>
+
               </div>
             </div>
 
@@ -197,7 +199,6 @@ export default function Home() {
                   <Button variant="outline" size="sm">Postman</Button>
                   <Button variant="outline" size="sm">Git</Button>
                   <Button variant="outline" size="sm">GitHub</Button>
-                  <Button variant="outline" size="sm">Optimed NXT</Button>
                   <Button variant="outline" size="sm">OpenVPN</Button>
 
                 </div>
