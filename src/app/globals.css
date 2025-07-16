@@ -107,6 +107,7 @@
 .light, :root[data-theme="light"] {
   --background: #dfe1e7;
   --foreground: #0e111b;
+  --foreground-light: #3c4257;
   --primary: #1f3165;
   --secondary: #829ae3;
   --accent: #1d45bf;
@@ -116,6 +117,7 @@
 .dark, :root[data-theme="dark"] {
   --background: #181a20;
   --foreground: #e4e7f1;
+  --foreground-dark: #595b66;
   --primary: #9aabe0;
   --secondary: #1c347d;
   --accent: #4069e2;

@@ -20,11 +20,12 @@ const pathname = usePathname()
 
   return (
     <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
+      <NavigationMenuList >
+        <NavigationMenuItem >
             <NavigationMenuLink href="/" className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === '/' && 'bg-accent text-accent-foreground'
+                    pathname === '/' && 'bg-accent text-accent-foreground',
+                    'text-xl'
                 )}>
               Home
             </NavigationMenuLink>
@@ -33,7 +34,8 @@ const pathname = usePathname()
         <NavigationMenuItem>
             <NavigationMenuLink href="/wyksztalcenie-i-kursy" className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === '/wyksztalcenie-i-kursy' && 'bg-accent text-accent-foreground'
+                    pathname === '/wyksztalcenie-i-kursy' && 'bg-accent text-accent-foreground',
+                    'text-xl'
                 )}>
               Wykształcenie i kursy
             </NavigationMenuLink>
@@ -42,7 +44,8 @@ const pathname = usePathname()
         <NavigationMenuItem>
             <NavigationMenuLink href="/projekty" className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === '/projekty' && 'bg-accent text-accent-foreground'
+                    pathname === '/projekty' && 'bg-accent text-accent-foreground',
+                    'text-xl'
                 )}>
               Zrealizowane projekty
             </NavigationMenuLink>
@@ -51,7 +54,8 @@ const pathname = usePathname()
         <NavigationMenuItem>
             <NavigationMenuLink href="/nad-czym-pracuje" className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === '/nad-czym-pracuje' && 'bg-accent text-accent-foreground'
+                    pathname === '/nad-czym-pracuje' && 'bg-accent text-accent-foreground',
+                    'text-xl'
                 )}>
               Nad czym pracuję
             </NavigationMenuLink>
@@ -60,7 +64,8 @@ const pathname = usePathname()
         <NavigationMenuItem>
             <NavigationMenuLink href="/miniBlog" className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === '/miniBlog' && 'bg-accent text-accent-foreground'
+                    pathname === '/miniBlog' && 'bg-accent text-accent-foreground',
+                    'text-xl'
                 )}>
               miniBlog
             </NavigationMenuLink>
@@ -70,7 +75,8 @@ const pathname = usePathname()
             <NavigationMenuLink href="/cv"
                 className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === '/cv' && 'bg-accent text-accent-foreground'
+                    pathname === '/cv' && 'bg-accent text-accent-foreground',
+                    'text-xl'
                 )}>
               CV
             </NavigationMenuLink>
@@ -79,7 +85,8 @@ const pathname = usePathname()
         <NavigationMenuItem>
             <NavigationMenuLink href='/kontakt' className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === '/kontakt' && 'bg-accent text-accent-foreground'
+                    pathname === '/kontakt' && 'bg-accent text-accent-foreground',
+                    'text-xl'
                 )}>
               Kontakt
             </NavigationMenuLink>
