@@ -6,14 +6,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function ProjectPage({ params }: Props) {
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
