@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 
 import { getProjectBySlug } from "@/lib/strapi";
 import { notFound } from "next/navigation";
@@ -41,6 +41,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             
                 <div className="text-[var(--subtext)]">
                     <strong>Technologie:</strong>{" "}
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {technologies.map((t: any) => t.name).join(", ")}
                 </div>
                 <div className="flex flex-row gap-10">
