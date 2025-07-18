@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ProjectsClient } from "@/components/projects/ProjectsClient";
 import { getAllTechnologies } from "@/lib/strapi";
 
@@ -6,7 +7,9 @@ export default async function ProjektyPage() {
 
   return (
     <div className="content-container min-h-[80svh]">
+      <Suspense fallback={<div>Ładowanie projektów...</div>}>
         <ProjectsClient technologies={technologies} />
+      </Suspense>
     </div>
   );
 }
