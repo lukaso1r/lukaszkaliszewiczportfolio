@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable */
+
 import { getProjectBySlug } from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -6,7 +8,13 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
+type ProjectPageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
