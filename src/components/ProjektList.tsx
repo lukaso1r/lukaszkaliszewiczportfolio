@@ -44,7 +44,7 @@ export const ProjectsList = ({ projects }: { projects: any[] }) => {
                   .join(", ")}
               </div>
               <Button asChild className="w-fit mt-3" variant="outline">
-                <Link href={`/projekty/${project.slug}`} >
+                <Link href={`/projekty/${project.slug as string}`} >
                   Zobacz szczegóły <MoveRight /> 
                 </Link>
               </Button>
