@@ -9,13 +9,13 @@ import remarkGfm from "remark-gfm";
 
 
 
-interface ProjectPageParams {
+type Props = {
   params: {
     slug: string;
   };
-}
+};
 
-export default async function ProjectPage({ params }: ProjectPageParams) {
+export default async function ProjectPage({ params }: Props) {
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
