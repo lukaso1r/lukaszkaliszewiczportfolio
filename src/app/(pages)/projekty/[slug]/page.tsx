@@ -9,8 +9,13 @@ import remarkGfm from "remark-gfm";
 
 
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function ProjectPage({ params }: { params: { slug: any } }) {
+interface ProjectPageParams {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function ProjectPage({ params }: ProjectPageParams) {
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
