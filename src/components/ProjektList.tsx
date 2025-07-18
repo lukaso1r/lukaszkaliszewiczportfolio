@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { Button } from "./ui/button";
 import { MoveRight } from "lucide-react";
 
@@ -22,13 +23,15 @@ export const ProjectsList = ({ projects }: { projects: any[] }) => {
         return (
           <div key={project.id} className="p-4 border rounded-md flex flex-row gap-6 items-start">
             <div className="w-32">
-              {thumbnail?.url && (
-                <img
+                {thumbnail?.url && (
+                <Image
                   src={`https://api.lukaszkaliszewicz.pl${thumbnail.url}`}
                   alt={title}
+                  width={128}
+                  height={96}
                   className="mb-4 rounded shadow-md w-auto object-cover"
                 />
-              )}
+                )}
             </div>
             <div className="flex flex-col gap-1">
               <h2 className="text-2xl font-semibold">{title}</h2>

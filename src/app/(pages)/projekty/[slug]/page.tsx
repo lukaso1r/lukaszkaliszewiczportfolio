@@ -1,7 +1,10 @@
 import { getProjectBySlug } from "@/lib/strapi";
 import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { MoveRight } from "lucide-react";
 
 
 type Props = {
@@ -28,10 +31,12 @@ export default async function ProjectPage({ params }: Props) {
 
             <div className="w-32">
                 {thumbnail?.url && (
-                    <img
-                    src={`https://api.lukaszkaliszewicz.pl${thumbnail.url}`}
-                    alt={title}
-                    className="mb-4 rounded shadow-md"
+                    <Image
+                        src={`https://api.lukaszkaliszewicz.pl${thumbnail.url}`}
+                        alt={title}
+                        width={128}
+                        height={128}
+                        className="mb-4 rounded shadow-md"
                     />
                 )}
             </div>
@@ -44,26 +49,21 @@ export default async function ProjectPage({ params }: Props) {
                 </div>
                 <div className="flex flex-row gap-10">
                     <div>
-                        <a
-                            href={url}
-                            className="block text-blue-500 underline"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <Link href={url} className="block text-blue-500 underline">
                             Link do projektu →
-                        </a>
-                        <a href="url" className="text-[var(--subtext)] no-underline">{url}</a>
+                        </Link>
+                        <Link href={url} className="text-[var(--subtext)] no-underline">{url}</Link>
                     </div>
                     <div>
-                        <a
+                        <Link
                             href={url}
                             className="block text-blue-500 underline"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             Link do repozytorium →
-                        </a>
-                        <a href="url" className="text-[var(--subtext)] no-underline">{repository}</a>
+                        </Link>
+                        <Link href={repository} className="text-[var(--subtext)] no-underline">{repository}</Link>
                     </div>
                 </div>
             </div>
