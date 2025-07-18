@@ -3,6 +3,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { Button  } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
+import Image from "next/image";
 
 export default function Home() {
 
@@ -10,8 +11,8 @@ export default function Home() {
     <div className="mx-auto lg:max-w-[100%]  xl:max-w-[90%] 2xl:max-w-[85rem] min-h-screen flex xl:flex-row flex-col md:items-center xl:items-start justify-center gap-6 md:gap-6 lg:gap-6 xl:gap-20 xl:py-16 md:py-4 lg:py-6">
       <aside className="flex flex-col items-center justify-center p-6 gap-3 w-full xl:w-1/4 text-center">
         <div className="profileImage ">
-          <img
-            src="Lukasz_Kaliszewicz.webp"
+          <Image
+            src="/Lukasz_Kaliszewicz.webp"
             alt="Lukasz Kaliszewicz"
             width={200}
             height={200}
