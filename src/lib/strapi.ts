@@ -9,11 +9,11 @@ export const fetchAPI = async (
   options: RequestInit = {}
 ) => {
   const queryString = qs.stringify(urlParamsObject, {
-    encodeValuesOnly: true, // najważniejsze!
+    encodeValuesOnly: true,
   });
 
     const requestUrl = `${API_URL}${path}${queryString ? `?${queryString}` : ""}`;
-    console.log(`Fetching URL: ${requestUrl}`); // Debugging line
+    console.log(`Fetching URL: ${requestUrl}`); 
 
   const res = await fetch(requestUrl, {
     headers: {
@@ -73,7 +73,7 @@ export const getProjectBySlug = async (slug: string) => {
     populate: ['technologies', 'thumbnail'],
   });
 
-  // Pojedynczy projekt (jeśli jest)
+  
   return data?.data?.[0] || null;
 };
 
