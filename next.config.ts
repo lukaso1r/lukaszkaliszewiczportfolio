@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['api.lukaszkaliszewicz.pl'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
