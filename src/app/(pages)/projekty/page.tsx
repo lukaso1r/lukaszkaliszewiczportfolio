@@ -1,8 +1,12 @@
-export default function Projekty(){
-    return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold mb-4">Kontakt</h1>
-            <p>Kontakt</p>
-        </div>
-    );
+import { ProjectsClient } from "@/components/projects/ProjectsClient";
+import { getAllTechnologies } from "@/lib/strapi";
+
+export default async function ProjektyPage() {
+  const technologies = await getAllTechnologies();
+
+  return (
+    <div className="content-container min-h-[80svh]">
+        <ProjectsClient technologies={technologies} />
+    </div>
+  );
 }

@@ -25,7 +25,7 @@ export default function Home() {
           <div className="lg:w-42 2xl:w-full w-full">
             <Separator className="bg-[var(--foreground-dark)]" />
           </div>
-          <p className="text-base">Tutaj będzie krótki tekst o mnie</p>
+          {/* <p className="text-base">Tutaj będzie krótki tekst o mnie</p> */}
 
           <div className="flex flex-col gap-4 xl:my-6 2xl:my-0">
             <div className="flex flex-col items-center gap-1 mt-3">
@@ -67,7 +67,7 @@ export default function Home() {
 
         <div className="education">
           <h2 className="text-xl font-semibold">Wykształcenie i kursy</h2>
-          <Separator className="bg-[var(--foreground-dark)] my-4" />
+          <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="educationStack flex flex-col gap-4">
 
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
@@ -93,9 +93,9 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="tech flex flex-col gap-2">
+        <div className="tech flex flex-col gap-0">
           <h2 className="text-xl font-semibold">Technologie jakie wykorzystywałem w projektach</h2>
-          <Separator className="bg-[var(--foreground-dark)] my-4" />
+          <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="techStack grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-9 ">
 
             <div className="techGroup flex flex-col gap-3">
@@ -212,7 +212,7 @@ export default function Home() {
 
         <div className="job">
           <h2 className="text-xl font-semibold">Doświadczenie zawodowe</h2>
-          <Separator className="bg-[var(--foreground-dark)] my-4" />
+          <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="workStack grid grid-cols-1 md:flex md:flex-col gap-6 md:gap-4">
 
             <div className="workItem grid grid-cols-1 md:flex md:flex-row gap-y-3 md:gap-y-0 md:gap-x-10  justify-between">
