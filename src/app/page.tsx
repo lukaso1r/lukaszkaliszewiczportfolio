@@ -126,8 +126,9 @@ export default function Home() {
               </div>
 
               <div className="techs flex flex-row flex-wrap gap-2 ">
-                <Button variant="outline" size="sm">Switch Cisco</Button>
-                <Button variant="outline" size="sm">Router TP-Link</Button>
+                <Button variant="outline" size="sm">Cisco</Button>
+                <Button variant="outline" size="sm">TP-Link</Button>
+                <Button variant="outline" size="sm">Mikrotik</Button>
                 <Button variant="outline" size="sm">QNAP NAS</Button>
                 <Button variant="outline" size="sm">NextCloud</Button>
                 <Button variant="outline" size="sm">Nginx</Button>

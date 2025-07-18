@@ -18,8 +18,7 @@ import Link from 'next/link'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/wyksztalcenie-i-kursy', label: 'Wykształcenie i kursy' },
-  { href: '/projekty', label: 'Zrealizowane projekty' },
-  { href: '/nad-czym-pracuje', label: 'Nad czym pracuję' },
+  { href: '/projekty', label: 'Projekty' },
   { href: '/miniBlog', label: 'miniBlog' },
   { href: '/cv', label: 'CV' },
   { href: '/kontakt', label: 'Kontakt' },
