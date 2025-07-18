@@ -10,7 +10,9 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+
   {
+    files: ['**/*.{ts,tsx,js,jsx}'],
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
     },
