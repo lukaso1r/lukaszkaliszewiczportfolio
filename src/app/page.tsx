@@ -4,11 +4,14 @@ import { Button  } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
 
+
+
   return (
-    <div className="mx-auto lg:max-w-[100%]  xl:max-w-[90%] 2xl:max-w-[85rem] min-h-screen flex xl:flex-row flex-col md:items-center xl:items-start justify-center gap-6 md:gap-6 lg:gap-6 xl:gap-20 xl:py-16 md:py-4 lg:py-6">
+    <div className="mx-auto lg:max-w-[100%]  xl:max-w-[90%] 2xl:max-w-[85rem] min-h-screen flex xl:flex-row flex-col md:items-center xl:items-start justify-center gap-6 md:gap-6 lg:gap-6 xl:gap-14 xl:py-14 md:py-4 lg:py-6">
       <aside className="flex flex-col items-center justify-center p-6 gap-3 w-full xl:w-1/4 text-center">
         <div className="profileImage ">
           <Image
@@ -64,17 +67,31 @@ export default function Home() {
         <Separator className="bg-[var(--foreground-dark)] xl:mb-6" />
       </div>
 
+      <nav className="flex-col gap-4 justify-center xl:flex-col xl:items-start xl:gap-2 xl:w-auto mb-4 xl:sticky xl:top-20 xl:flex hidden">
+        <div className="flex flex-col gap-4 items-start ">
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="#education">Wykształcenie</Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="#technologies">Technologie</Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="#experience">Doświadczenie</Link>
+          </Button>
+        </div>
+      </nav>
+
       <main className="w-full px-4 md:p-0 md:w-5/6 lg:w-[90%] xl:w-4/5 flex flex-col gap-8">
 
         <div className="education">
-          <h2 className="text-xl font-semibold">Wykształcenie i kursy</h2>
+          <h2 id="education" className="scroll-mt-20 text-xl font-semibold">Wykształcenie i kursy</h2>
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="educationStack flex flex-col gap-4">
 
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
-                <h3 className="text-lg font-semibold">Politechnika Białostocka</h3>
-                <p className="text-[var(--text)]">Kierunek: informatyka, Poziom wykształcenia: inżynier</p>
+                <h3 className="text-lg font-semibold">Informatyka, Poziom wykształcenia: inżynier</h3>
+                <p className="text-[var(--text)]">Politechnika Białostocka</p>
               </div>
               <div className="-order-1 xl:order-2">
                 <p>10.2021 - 02.2025</p>
@@ -83,11 +100,62 @@ export default function Home() {
 
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
-                <h3 className="text-lg font-semibold">Zespół Szkół Elektrycznych im. prof. Janusza Groszkowskiego w Białymstoku</h3>
-                <p>Specjalizacja: Technik Informatyk, kwalifikacja zawodowa EE.08, EE.09</p>
+                <h3 className="text-lg font-semibold">Technik Informatyk, kwalifikacja zawodowa EE.08, EE.09 </h3>
+                <p>Zespół Szkół Elektrycznych im. prof. Janusza Groszkowskiego w Białymstoku, technikum</p>
               </div>
               <div className="-order-1 xl:order-2">
                 <p>09.2017 - 05.2021</p>
+              </div>
+            </div>
+
+            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
+              <div className="order-last xl:order-1">
+                <h3 className="text-lg font-semibold">Szkoła Admina</h3>
+                <p>Organizator: GRUPA ADM Sp. z o.o. ARKADIUSZ SICZEK</p>
+              </div>
+              <div className="-order-1 xl:order-2">
+                <p>07.2025 - w trakcie</p>
+              </div>
+            </div>
+
+            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
+              <div className="order-last xl:order-1">
+                <h3 className="text-lg font-semibold">Homelab - Wejdź do IT</h3>
+                <p>Organizator: GRUPA ADM Sp. z o.o. ARKADIUSZ SICZEK</p>
+              </div>
+              <div className="-order-1 xl:order-2">
+                <p>07.2025 - w trakcie</p>
+              </div>
+            </div>
+
+            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
+              <div className="order-last xl:order-1">
+                <h3 className="text-lg font-semibold">CCNA po polsku - kurs sieci komputerowych (egzamin 200-301)</h3>
+                <p>Udemy: Marious Kuriata</p>
+              </div>
+              <div className="-order-1 xl:order-2">
+                <p>07.2025 - w trakcie</p>
+              </div>
+            </div>
+
+            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
+              <div className="order-last xl:order-1">
+                <h3 className="text-lg font-semibold">Red Hat System Administration I | RH124</h3>
+                <p>Organizator: Politechnika Białostocka</p>
+              </div>
+              <div className="-order-1 xl:order-2">
+                <p>02.2024</p>
+              </div>
+            </div>
+
+            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between text-slate-500">
+              <div className="order-last xl:order-1">
+                <p>Oczekiwanie na wynik rekrutacji - decyzja 31.08.2025</p>
+                <h3 className="text-lg font-semibold">Studia Podyplomowe: Inżynieria cyberbezpieczeństwa</h3>
+                <p>Politechnika Warszawska Wydział Elektroniki i Technik Informacyjnych</p>
+              </div>
+              <div className="-order-1 xl:order-2">
+                <p>10.2025</p>
               </div>
             </div>
 
@@ -95,7 +163,7 @@ export default function Home() {
         </div>
         
         <div className="tech flex flex-col gap-0">
-          <h2 className="text-xl font-semibold">Technologie jakie wykorzystywałem w projektach</h2>
+          <h2 id="technologies" className="scroll-mt-20 text-xl font-semibold">Technologie jakie wykorzystywałem w projektach</h2>
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="techStack grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-9 ">
 
@@ -105,18 +173,43 @@ export default function Home() {
               </div>
 
               <div className="techs flex flex-row flex-wrap gap-2">
-                <Button variant="outline" size="sm">Java Script</Button>
-                <Button variant="outline" size="sm">Typescript</Button>
-                <Button variant="outline" size="sm">Python</Button>
-                <Button variant="outline" size="sm">Bash</Button>
-                <Button variant="outline" size="sm">HTML</Button>
-                <Button variant="outline" size="sm">CSS</Button>
-                <Button variant="outline" size="sm">Tailwind CSS</Button>
-                <Button variant="outline" size="sm">React</Button>
-                <Button variant="outline" size="sm">Next.js</Button>
-                <Button variant="outline" size="sm">Nuxt.js</Button>
-                <Button variant="outline" size="sm">Vue.js</Button>
-                <Button variant="outline" size="sm">Ionic Framework</Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=javaScript`}>Java Script</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=typescript`}>Typescript</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=python`}>Python</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=bash`}>Bash</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=html`}>HTML</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=css`}>CSS</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=tailwindCss`}>Tailwind CSS</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=react`}>React</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=nextJs`}>Next.js</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=nuxtJs`}>Nuxt.js</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=vueJs`}>Vue.js</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=ionicFramework`}>Ionic Framework</Link>
+                </Button>
+                
 
               </div>
             </div>
@@ -126,83 +219,139 @@ export default function Home() {
                 <EthernetPort className="w-5"/> Urządzenia  i usługi sieciowe
               </div>
 
-              <div className="techs flex flex-row flex-wrap gap-2 ">
-                <Button variant="outline" size="sm">Cisco</Button>
-                <Button variant="outline" size="sm">TP-Link</Button>
-                <Button variant="outline" size="sm">Mikrotik</Button>
-                <Button variant="outline" size="sm">QNAP NAS</Button>
-                <Button variant="outline" size="sm">NextCloud</Button>
-                <Button variant="outline" size="sm">Nginx</Button>
-                <Button variant="outline" size="sm">DNS</Button>
-                <Button variant="outline" size="sm">DDNS</Button>
-                <Button variant="outline" size="sm">DHCP</Button>
-                <Button variant="outline" size="sm">VPN</Button>
-                <Button variant="outline" size="sm">SSH</Button>
+                <div className="techs flex flex-row flex-wrap gap-2 ">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=cisco`}>Cisco</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=tpLink`}>TP-Link</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=mikrotik`}>Mikrotik</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=qnapNas`}>QNAP NAS</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=nextCloud`}>NextCloud</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=nginx`}>Nginx</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=dns`}>DNS</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=ddns`}>DDNS</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=dhcp`}>DHCP</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=vpn`}>VPN</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=ssh`}>SSH</Link>
+                </Button>
+                </div>
               </div>
-            </div>
 
-            <div className="techGroup flex flex-col gap-3">
-              <div className="flex flex-row gap-3 text-slate-400">
+              <div className="techGroup flex flex-col gap-3">
+                <div className="flex flex-row gap-3 text-slate-400">
                 <Database className="w-5"/> Bazy danych
+                </div>
+
+                <div className="techs flex flex-row flex-wrap gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=postgreSql`}>PostgreSql</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=sqlite`}>SQLite</Link>
+                </Button>
+                </div>
               </div>
 
-              <div className="techs flex flex-row flex-wrap gap-2">
-                <Button variant="outline" size="sm">PostgreSql</Button>
-                <Button variant="outline" size="sm">SQLite</Button>
-              </div>
-            </div>
-
-            <div className="techGroup flex flex-col gap-3">
-              <div className="flex flex-row gap-3 text-slate-400">
+              <div className="techGroup flex flex-col gap-3">
+                <div className="flex flex-row gap-3 text-slate-400">
                 <Cloud className="w-5"/> Rozwiązania chmurowe
+                </div>
+
+                <div className="techs flex flex-row flex-wrap gap-2 ">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=cloudflareR2Bucket`}>Cloudflare R2 Bucket</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=mikrusVps`}>Mikr.us VPS</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=vercel`}>Vercel</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=ovh`}>OVH</Link>
+                </Button>
+                </div>
               </div>
 
-              <div className="techs flex flex-row flex-wrap gap-2 ">
-                <Button variant="outline" size="sm">Cloudflare R2 Bucket</Button>
-                <Button variant="outline" size="sm">Mikr.us VPS</Button>
-                <Button variant="outline" size="sm">Vercel</Button>
-                <Button variant="outline" size="sm">OVH</Button>
-              </div>
-            </div>
-
-            <div className="techGroup flex flex-col gap-3">
-              <div className="flex flex-row gap-3 text-slate-400">
+              <div className="techGroup flex flex-col gap-3">
+                <div className="flex flex-row gap-3 text-slate-400">
                 <TableOfContents className="w-5"/> CMS / Headless CMS / Ecommerce / HIS
+                </div>
+
+                <div className="techs flex flex-row flex-wrap gap-2 ">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=strapi`}>Strapi</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=wordpress`}>Wordpress</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=shoper`}>Shoper</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=optimedNxt`}>Optimed NXT</Link>
+                </Button>
+                </div>
               </div>
 
-              <div className="techs flex flex-row flex-wrap gap-2 ">
-                <Button variant="outline" size="sm">Strapi</Button>
-                <Button variant="outline" size="sm">Wordpress</Button>
-                <Button variant="outline" size="sm">Shoper</Button>
-                <Button variant="outline" size="sm">Optimed NXT</Button>
-
-              </div>
-            </div>
-
-            <div className="techGroup flex flex-col gap-3">
-              <div className="flex flex-row gap-3 text-slate-400">
+              <div className="techGroup flex flex-col gap-3">
+                <div className="flex flex-row gap-3 text-slate-400">
                 <MonitorCog className="w-5"/> Systemy operacyjne i wirtualizacja
+                </div>
+
+                <div className="techs flex flex-row flex-wrap gap-2 ">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=windows`}>Windows</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=ubuntu`}>Ubuntu</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=ubuntuServer`}>Ubuntu Server</Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=proxmox`}>Proxmox</Link>
+                </Button>
+                </div>
               </div>
 
-              <div className="techs flex flex-row flex-wrap gap-2 ">
-                <Button variant="outline" size="sm">Windows</Button>
-                <Button variant="outline" size="sm">Ubuntu</Button>
-                <Button variant="outline" size="sm">Ubuntu Server</Button>
-                <Button variant="outline" size="sm">Proxmox</Button>
-              </div>
-            </div>
-
-            <div className="techGroup flex flex-col gap-3">
+              <div className="techGroup flex flex-col gap-3">
                 <div className="flex flex-row gap-3 text-slate-400">
                   <MonitorSmartphone className="w-5"/> Oprogramowanie akcesoryjne
                 </div>
 
                 <div className="techs flex flex-row flex-wrap gap-2 ">
-                  <Button variant="outline" size="sm">Postman</Button>
-                  <Button variant="outline" size="sm">Git</Button>
-                  <Button variant="outline" size="sm">GitHub</Button>
-                  <Button variant="outline" size="sm">OpenVPN</Button>
-
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=postman`}>Postman</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=git`}>Git</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=github`}>GitHub</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=openVpn`}>OpenVPN</Link>
+                  </Button>
                 </div>
             </div>
 
@@ -212,7 +361,7 @@ export default function Home() {
         </div>
 
         <div className="job">
-          <h2 className="text-xl font-semibold">Doświadczenie zawodowe</h2>
+          <h2 id="experience" className="scroll-mt-20 text-xl font-semibold">Doświadczenie zawodowe</h2>
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="workStack grid grid-cols-1 md:flex md:flex-col gap-6 md:gap-4">
 
