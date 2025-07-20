@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -118,12 +122,13 @@
   --background: #181a20;
   --foreground: #e4e7f1;
   --foreground-dark: #595b66;
-  --primary: #9aabe0;
+  --primary: #a4b2df85;
   --secondary: #1c347d;
   --accent: #4069e2;
   --text: #e4e7f1; /* opcjonalnie */
+  --subtext: #90a1b9; /* darker subtext */
 }
 
 .content-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
 }

@@ -1,8 +1,15 @@
-export default function Projekty(){
-    return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold mb-4">Kontakt</h1>
-            <p>Kontakt</p>
-        </div>
-    );
+import { Suspense } from "react";
+import { ProjectsClient } from "@/components/projects/ProjectsClient";
+import { getAllTechnologies } from "@/lib/strapi";
+
+export default async function ProjektyPage() {
+  const technologies = await getAllTechnologies();
+
+  return (
+    <div className="content-container min-h-[80svh]">
+      <Suspense fallback={<div>Ładowanie projektów...</div>}>
+        <ProjectsClient technologies={technologies} />
+      </Suspense>
+    </div>
+  );
 }

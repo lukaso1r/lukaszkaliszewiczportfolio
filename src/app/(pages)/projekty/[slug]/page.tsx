@@ -1,0 +1,79 @@
+'use server';
+
+import { getProjectBySlug } from "@/lib/strapi";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+export default async function ProjectPage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
+  const slug = params.slug;
+
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    notFound();
+  }
+
+  const { title, description, technologies, url, thumbnail, repository } = project;
+
+  return (
+    <div className="content-container mx-auto px-4 py-8 gap-4 flex flex-col">
+      <div className="flex flex-row gap-8 items-center border rounded-md p-4">
+        <div className="w-32">
+          {thumbnail?.url && (
+            <Image
+              src={`https://api.lukaszkaliszewicz.pl${thumbnail.url}`}
+              alt={title}
+              width={128}
+              height={128}
+              className="mb-4 rounded shadow-md"
+            />
+          )}
+        </div>
+        <div className="flex flex-col gap-3">
+          <h1 className="text-3xl font-bold mb-1">{title}</h1>
+          <div className="text-[var(--subtext)]">
+            <strong>Technologie:</strong>{" "}
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {technologies.map((t: any) => t.name).join(", ")}
+          </div>
+          <div className="flex flex-row gap-10">
+            <div>
+              <Link href={url} className="block text-blue-500 underline">
+                Link do projektu →
+              </Link>
+              <Link href={url} className="text-[var(--subtext)] no-underline">
+                {url}
+              </Link>
+            </div>
+            <div>
+              <Link
+                href={repository}
+                className="block text-blue-500 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Link do repozytorium →
+              </Link>
+              <Link href={repository} className="text-[var(--subtext)] no-underline">
+                {repository}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 prose">
+        <h2 className="text-2xl font-semibold">Opis projektu</h2>
+        {description ? (
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{description}</ReactMarkdown>
+        ) : (
+          <p>Opis wkrótce się pojawi</p>
+        )}
+      </div>
+    </div>
+  );
+}
