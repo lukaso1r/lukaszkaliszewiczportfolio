@@ -22,16 +22,17 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
   return (
     <div className="content-container mx-auto px-4 py-8 gap-4 flex flex-col">
       <div className="flex flex-col lg:flex-row gap-8 items-center border rounded-md p-4">
-        <div className="w-full lg:w-32">
+        <div className="w-full lg:w-1/5">
           {thumbnail?.url && (
             <Image
               src={`https://api.lukaszkaliszewicz.pl${thumbnail.url}`}
               alt={title}
               width={270}
               height={128}
-              className="mb-4 rounded shadow-md"
+              className="rounded shadow-md w-full lg:w-auto"
               loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100%, 33vw"
+              sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%, 33vw"
+              style={{maxHeight: "100%", maxWidth: "100%" }}
             />
           )}
         </div>
@@ -42,7 +43,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {technologies.map((t: any) => t.name).join(", ")}
           </div>
-          <div className="flex flex-col lg:flex-row gap-10">
+          <div className="flex flex-col lg:flex-row ">
             <div>
               
               {url && (<>
@@ -76,12 +77,12 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 prose leading-">
+      <div className="flex flex-col gap-4 prose leading-8">
         {description ? (
           <ReactMarkdown remarkPlugins={[remarkGfm]}
             components={{
               h3: ({...props}) => <h3 className="text-2xl font-semibold" {...props} />,
-              p: ({...props}) => <p className="leading-7" {...props} />,
+              p: ({...props}) => <p className="leading-8" {...props} />,
               tr: ({...props}) => <tr className="border-white" {...props} />,
               td: ({...props}) => <td className="border border-white px-4 py-2" {...props} />,
               th: ({...props}) => <th className="border border-white px-4 py-2" {...props} />,
