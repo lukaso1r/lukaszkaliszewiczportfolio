@@ -110,7 +110,6 @@ export const ProjectsClient = ({
         </Button>
       </div>
 
-      {/*  Loader lub lista */}
       {isPending ? (
         <div className="flex justify-center items-center h-32 animate-pulse">
           <Loader2 className="animate-spin w-6 h-6 text-gray-500" />
