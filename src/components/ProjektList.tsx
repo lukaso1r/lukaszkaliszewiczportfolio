@@ -22,22 +22,22 @@ export const ProjectsList = ({ projects }: { projects: any[] }) => {
           project;
 
         return (
-          <div key={project.id} className="p-4 border rounded-md flex flex-col lg:flex-row gap-6 items-start">
-            <div className="w-full lg:w-1/3 lg:max-w-[180px]">
+          <div key={project.id} className="p-4 border rounded-md flex flex-col lg:flex-row gap-6 items-start lg:items-stretch ">
+            <div className="w-full lg:w-1/3 lg:max-w-[180px] flex flex-col justify-center">
                 {thumbnail?.url && (
                 <Image
                   src={`https://api.lukaszkaliszewicz.pl${thumbnail.url}`}
                   alt={title}
                   width={200}
                   height={10}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100%, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100%"
                   className="mb-4 rounded shadow-md w-auto object-cover"
                   loading="lazy"
-                  style={{objectFit: "cover", maxHeight: "100%", maxWidth: "100%"}}
+                  style={{ maxHeight: "100%", maxWidth: "100%"}}
                 />
                 )}
             </div>
-            <div className="flex flex-col gap-1 lg:w-2/3">
+            <div className="flex flex-col gap-1 lg:gap-3 lg:w-2/3">
               <h2 className="text-2xl font-semibold">{title}</h2>
               <p className="text-base">{shortDescription}</p>
               <div className="mt-2 text-[var(--subtext)]">
