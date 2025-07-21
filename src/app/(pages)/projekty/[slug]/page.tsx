@@ -21,6 +21,9 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
 
   return (
     <div className="content-container mx-auto px-4 py-8 gap-4 flex flex-col">
+      <Link href="/projekty" className="text-[] underline mb-4">
+        ← Wróć do listy projektów
+      </Link>
       <div className="flex flex-col lg:flex-row gap-8 items-center border rounded-md p-4">
         <div className="w-full lg:w-1/5">
           {thumbnail?.url && (
