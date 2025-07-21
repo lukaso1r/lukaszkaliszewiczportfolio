@@ -42,34 +42,54 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
           </div>
           <div className="flex flex-row gap-10">
             <div>
-              <Link href={url} className="block text-blue-500 underline">
-                Link do projektu →
-              </Link>
-              <Link href={url} className="text-[var(--subtext)] no-underline">
-                {url}
-              </Link>
+              
+              {url && (<>
+                <Link href={url} className="block text-blue-500 underline">
+                  Link do projektu →
+                </Link>
+                <Link href={url} className="text-[var(--subtext)] no-underline">
+                  {url}
+                </Link>
+              </>)}
+              
+
+
             </div>
             <div>
-              <Link
-                href={repository}
-                className="block text-blue-500 underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Link do repozytorium →
-              </Link>
-              <Link href={repository} className="text-[var(--subtext)] no-underline">
-                {repository}
-              </Link>
+              {repository && (<>
+                <Link
+                  href={repository}
+                  className="block text-blue-500 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Link do repozytorium →
+                </Link>
+                <Link href={repository} className="text-[var(--subtext)] no-underline">
+                  {repository}
+                </Link>
+              </>)}
             </div>
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4 prose">
-        <h2 className="text-2xl font-semibold">Opis projektu</h2>
+        <h2 className="text-3xl font-semibold">Opis projektu</h2>
         {description ? (
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{description}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}
+            components={{
+              h3: ({...props}) => <h3 className="text-2xl font-semibold" {...props} />,
+              p: ({...props}) => <p className="" {...props} />,
+              tr: ({...props}) => <tr className="border-white" {...props} />,
+              td: ({...props}) => <td className="border border-white px-4 py-2" {...props} />,
+              th: ({...props}) => <th className="border border-white px-4 py-2" {...props} />,
+              table: ({...props}) => <table className="border-collapse border border-white w-fit" {...props} />,
+          }}
+
+          >
+            {description}
+          </ReactMarkdown>
         ) : (
           <p>Opis wkrótce się pojawi</p>
         )}
