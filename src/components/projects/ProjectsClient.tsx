@@ -79,6 +79,7 @@ export const ProjectsClient = ({
             variant={selectedTechs.includes(tech.slug) ? "default" : "outline"}
             size="sm"
             onClick={() => toggleTech(tech.slug)}
+            className="cursor-pointer"
           >
             {tech.name}
           </Button>
@@ -91,6 +92,7 @@ export const ProjectsClient = ({
           variant={isDone === true ? "default" : "outline"}
           size="sm"
           onClick={() => toggleIsDone(true)}
+          className="cursor-pointer"
         >
           ✅ Zakończone
         </Button>
@@ -98,6 +100,7 @@ export const ProjectsClient = ({
           variant={isDone === false ? "default" : "outline"}
           size="sm"
           onClick={() => toggleIsDone(false)}
+          className="cursor-pointer"
         >
           🚧 W trakcie
         </Button>
@@ -105,8 +108,19 @@ export const ProjectsClient = ({
           variant={isDone === null ? "default" : "outline"}
           size="sm"
           onClick={() => toggleIsDone(null)}
+          className="cursor-pointer"
         >
           🔁 Wszystkie
+        </Button>
+        
+        <div className="flex-1" />
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => updateUrl([], null)}
+          className="ml-auto cursor-pointer"
+        >
+          ❌ Resetuj filtry
         </Button>
       </div>
 

@@ -331,6 +331,9 @@ export default function Home() {
                 <Button variant="outline" size="sm" asChild>
                   <Link href={`/projekty?tech=proxmox`}>Proxmox</Link>
                 </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/projekty?tech=docker`}>Docker</Link>
+                </Button>
                 </div>
               </div>
 
@@ -351,6 +354,12 @@ export default function Home() {
                   </Button>
                   <Button variant="outline" size="sm" asChild>
                   <Link href={`/projekty?tech=openVpn`}>OpenVPN</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href={`/projekty?tech=ultraViewer`}>UltraViewer</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href={`/projekty?tech=rustDesk`}>RustDesk</Link>
                   </Button>
                 </div>
             </div>
