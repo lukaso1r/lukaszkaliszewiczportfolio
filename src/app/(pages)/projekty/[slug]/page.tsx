@@ -40,13 +40,13 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
           )}
         </div>
         <div className="flex flex-col gap-3">
-          <h1 className="text-3xl font-bold mb-1">{title}</h1>
+          <h1 className="text-3xl font-bold mb-1 leading-8">{title}</h1>
           <div className="text-[var(--subtext)]">
             <strong>Technologie:</strong>{" "}
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {technologies.map((t: any) => t.name).join(", ")}
           </div>
-          <div className="flex flex-col lg:flex-row ">
+          <div className="flex flex-col lg:flex-row xl:gap-8 gap-6">
             <div>
               
               {url && (<>
@@ -90,6 +90,11 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
               td: ({...props}) => <td className="border border-white px-4 py-2" {...props} />,
               th: ({...props}) => <th className="border border-white px-4 py-2" {...props} />,
               table: ({...props}) => <table className="border-collapse border border-white w-fit" {...props} />,
+              a: ({...props}) => <a className="text-blue-500 underline" {...props} />,
+              ul: ({...props}) => <ul className="list-disc" {...props} />,
+              li: ({...props}) => <li className="ml-4" {...props} />,
+              code: ({...props}) => <code className="bg-[var(--foreground-dark)] p-1 rounded" {...props} />,
+              pre: ({...props}) => <pre className="bg-[var(--foreground-dark)] p-4 rounded" {...props} />,
           }}
           
           >

@@ -1,13 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription  } from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
 import { Menu } from 'lucide-react'
@@ -20,8 +13,8 @@ const navLinks = [
   // { href: '/wyksztalcenie-i-kursy', label: 'Wykształcenie i kursy' },
   { href: '/projekty', label: 'Projekty' },
   { href: '/miniBlog', label: 'miniBlog' },
-  { href: '/cv', label: 'CV' },
-  { href: '/kontakt', label: 'Kontakt' },
+  // { href: '/cv', label: 'CV' },
+  // { href: '/kontakt', label: 'Kontakt' },
 ]
 
 export function MainNav() {
@@ -31,24 +24,21 @@ export function MainNav() {
     <nav className="w-fit" aria-label="Główna nawigacja">
       {/* Menu na desktop i tablet */}
       <div className="hidden md:flex">
-        <NavigationMenu>
-          <NavigationMenuList>
-            {navLinks.map((link) => (
-              <NavigationMenuItem key={link.href}>
-                <NavigationMenuLink
-                  href={link.href}
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    pathname === link.href && 'bg-accent text-accent-foreground',
-                    'text-lg'
-                  )}
-                >
-                  {link.label}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+        <ul className="flex items-center space-x-1">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={cn(
+                  'inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-lg',
+                  pathname === link.href && 'bg-accent text-accent-foreground'
+                )}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Hamburger menu na mobile */}

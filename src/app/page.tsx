@@ -5,10 +5,13 @@ import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfConten
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
 
 
+
+  const [copied, setCopied] = useState(false);
 
   return (
     <div className="mx-auto lg:max-w-[100%]  xl:max-w-[90%] 2xl:max-w-[85rem] min-h-screen flex xl:flex-row flex-col md:items-center xl:items-start justify-center gap-6 md:gap-6 lg:gap-6 xl:gap-14 xl:py-14 md:py-4 lg:py-6">
@@ -36,14 +39,30 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button className="flex flex-row items-center cursor-pointer text-lg" variant="ghost" size="sm" aria-label="Kopiuj e-mail" onClick={() => navigator.clipboard.writeText('lukasz.kaliszewicz01@gmail.com')}>
-                    <Mail className="" /> lukasz.kaliszewicz01@gmail.com
-                  </Button>
+                  <div
+                    className="flex flex-row items-center cursor-pointer text-lg gap-2"
+                    onClick={async () => {
+                      await navigator.clipboard.writeText('lukasz.kaliszewicz01@gmail.com');
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 1500);
+                    }}
+                  >
+                    <Mail className="w-4 h-4" /> lukasz.kaliszewicz01@gmail.com
+                  </div>
                 </TooltipTrigger>
-                <TooltipContent className="text-[black] cursor-pointer" side="right">
-                  <p onClick={() => navigator.clipboard.writeText('lukasz.kaliszewicz01@gmail.com')}>Copy</p>
+                <TooltipContent side="right" onClick={async () => {
+                      await navigator.clipboard.writeText('lukasz.kaliszewicz01@gmail.com');
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 1500);
+                    }}>
+                  {copied ? "Skopiowano!" : "click to copy"}
                 </TooltipContent>
               </Tooltip>
+
+               {copied && (
+                 <p>Skopiowano!</p>
+               )}
+
               <Button className="flex flex-row items-center bg-transparent hover:bg-transparent text-base" variant="default" size="sm" aria-label="Kopiuj e-mail">
                 <MapPin className="" /> Biaystok / Warszawa
               </Button>
