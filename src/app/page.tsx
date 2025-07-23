@@ -69,10 +69,10 @@ export default function Home() {
 
             </div>
             <div className="flex flex-row items-center gap-2 justify-center">
-              <Button className="flex flex-row items-center cursor-pointer" variant="ghost" size="sm" aria-label="Github" onClick={() => window.open('', '_blank')}>
+              <Button className="flex flex-row items-center cursor-pointer" variant="ghost" size="sm" aria-label="Github" onClick={() => window.open('https://github.com/lukaso1r', '_blank')}>
                 <Github className="" /> Github
               </Button>
-              <Button className="flex flex-row items-center cursor-pointer" variant="ghost" size="sm" aria-label="Linkedin" onClick={() => window.open('', '_blank')}>
+              <Button className="flex flex-row items-center cursor-pointer" variant="ghost" size="sm" aria-label="Linkedin" onClick={() => window.open('https://www.linkedin.com/in/%C5%82ukasz-kaliszewicz-70b543318/', '_blank')}>
                 <Linkedin className="" /> Linkedin
               </Button>
             </div>
