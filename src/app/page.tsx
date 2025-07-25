@@ -64,7 +64,7 @@ export default function Home() {
                )}
 
               <Button className="flex flex-row items-center bg-transparent hover:bg-transparent text-base" variant="default" size="sm" aria-label="Kopiuj e-mail">
-                <MapPin className="" /> Biaystok / Warszawa
+                <MapPin className="" /> Białystok / Warszawa
               </Button>
 
             </div>
