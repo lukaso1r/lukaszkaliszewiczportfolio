@@ -55,7 +55,7 @@ export default function Home() {
                       setCopied(true);
                       setTimeout(() => setCopied(false), 1500);
                     }}>
-                  {copied ? "Skopiowano!" : "click to copy"}
+                  {copied ? "Skopiowano!" : "Kliknij aby skopiować"}
                 </TooltipContent>
               </Tooltip>
 
