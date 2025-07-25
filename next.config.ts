@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
     tsconfigPath: './tsconfig.json'
+  },
+  async redirects() {
+    return [
+      {
+        source: '/projekty/lukaszkaliszewcz.pl',
+        destination: '/',
+        permanent: true,
+      },
+    ]
   }
 };
 
