@@ -50,10 +50,14 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
             <div>
               
               {url && (<>
-                <Link href={url} className="block text-blue-500 underline">
+                <Link href={url} className="block text-blue-500 underline"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   Link do projektu →
                 </Link>
-                <Link href={url} className="text-[var(--subtext)] no-underline">
+                <Link href={url} className="text-[var(--subtext)] no-underline"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   {url}
                 </Link>
               </>)}
