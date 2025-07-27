@@ -1,17 +1,47 @@
 'use client';
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button  } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone, BookOpenCheck } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
 
 
 
   const [copied, setCopied] = useState(false);
+
+  const [focusedSection, setFocusedSection] = useState('');
+
+  useEffect(() => {
+    const sectionIds = ["education", "technologies", "experience"];
+    const handleScroll = () => {
+      let currentSection = "";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 200) {
+            currentSection = id;
+          }
+        }
+      }
+      setFocusedSection(currentSection);
+      console.log("Focused Section:", currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
 
   return (
     <div className="mx-auto lg:max-w-[100%]  xl:max-w-[90%] 2xl:max-w-[85rem] min-h-screen flex xl:flex-row flex-col md:items-center xl:items-start justify-center gap-6 md:gap-6 lg:gap-6 xl:gap-14 xl:py-14 md:py-4 lg:py-6">
@@ -79,7 +109,6 @@ export default function Home() {
           </div>
         </div>
 
-
       </aside>
 
       <div className="block xl:hidden w-full">
@@ -87,18 +116,19 @@ export default function Home() {
       </div>
 
       <nav className="flex-col gap-4 justify-center xl:flex-col xl:items-start xl:gap-2 xl:w-auto mb-4 xl:sticky xl:top-20 xl:flex hidden">
-        <div className="flex flex-col gap-4 items-start ">
+        <div className="flex flex-col gap-4 items-start tracking-wide">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="#education">Wykształcenie</Link>
+            <Link href="#education" className={focusedSection === 'education' ? 'border-b-2 border-white font-semibold ' : ''}>Wykształcenie</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild>
-            <Link href="#technologies">Technologie</Link>
+            <Link href="#technologies" className={focusedSection === 'technologies' ? 'border-b-2 border-white font-semibold ' : ''}>Technologie</Link>
           </Button>
           <Button variant="ghost" size="sm" asChild>
-            <Link href="#experience">Doświadczenie</Link>
+            <Link href="#experience" className={focusedSection === 'experience' ? 'border-b-2 border-white font-semibold ' : ''}>Doświadczenie</Link>
           </Button>
         </div>
       </nav>
+
 
       <main className="w-full px-4 md:p-0 md:w-5/6 lg:w-[90%] xl:w-4/5 flex flex-col gap-8">
 
@@ -107,9 +137,20 @@ export default function Home() {
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="educationStack flex flex-col gap-4">
 
+            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between text-slate-500">
+              <div className="order-last xl:order-1">
+                <p>Oczekiwanie na wynik rekrutacji - decyzja 31.08.2025</p>
+                <h3 className="text-lg font-semibold">Studia Podyplomowe: Inżynieria cyberbezpieczeństwa</h3>
+                <p>Politechnika Warszawska Wydział Elektroniki i Technik Informacyjnych</p>
+              </div>
+              <div className="-order-1 xl:order-2">
+                <p>10.2025</p>
+              </div>
+            </div>
+
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
-                <h3 className="text-lg font-semibold">Informatyka, Poziom wykształcenia: inżynier</h3>
+                <h3 className="text-lg font-semibold">Informatyka, poziom: inżynier</h3>
                 <p className="text-[var(--text)]">Politechnika Białostocka</p>
               </div>
               <div className="-order-1 xl:order-2">
@@ -127,13 +168,14 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="flex flex-row gap-3 text-slate-400">
+                <BookOpenCheck className="w-5"/> Kursy
+            </div>
+
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
                 <h3 className="text-lg font-semibold">Szkoła Admina</h3>
                 <p>Organizator: GRUPA ADM Sp. z o.o. ARKADIUSZ SICZEK</p>
-              </div>
-              <div className="-order-1 xl:order-2">
-                <p>07.2025 - w trakcie</p>
               </div>
             </div>
 
@@ -142,18 +184,12 @@ export default function Home() {
                 <h3 className="text-lg font-semibold">Homelab - Wejdź do IT</h3>
                 <p>Organizator: GRUPA ADM Sp. z o.o. ARKADIUSZ SICZEK</p>
               </div>
-              <div className="-order-1 xl:order-2">
-                <p>07.2025 - w trakcie</p>
-              </div>
             </div>
 
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
                 <h3 className="text-lg font-semibold">CCNA po polsku - kurs sieci komputerowych (egzamin 200-301)</h3>
                 <p>Udemy: Marious Kuriata</p>
-              </div>
-              <div className="-order-1 xl:order-2">
-                <p>07.2025 - w trakcie</p>
               </div>
             </div>
 
@@ -162,21 +198,9 @@ export default function Home() {
                 <h3 className="text-lg font-semibold">Red Hat System Administration I | RH124</h3>
                 <p>Organizator: Politechnika Białostocka</p>
               </div>
-              <div className="-order-1 xl:order-2">
-                <p>02.2024</p>
-              </div>
             </div>
 
-            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between text-slate-500">
-              <div className="order-last xl:order-1">
-                <p>Oczekiwanie na wynik rekrutacji - decyzja 31.08.2025</p>
-                <h3 className="text-lg font-semibold">Studia Podyplomowe: Inżynieria cyberbezpieczeństwa</h3>
-                <p>Politechnika Warszawska Wydział Elektroniki i Technik Informacyjnych</p>
-              </div>
-              <div className="-order-1 xl:order-2">
-                <p>10.2025</p>
-              </div>
-            </div>
+
 
           </div>
         </div>
