@@ -188,7 +188,7 @@ export default function Home() {
 
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
-                <h3 className="text-lg font-semibold">CCNA po polsku - kurs sieci komputerowych (egzamin 200-301)</h3>
+                <h3 className="text-lg font-semibold">CCNA - kurs sieci komputerowych (egzamin 200-301)</h3>
                 <p>Udemy: Marious Kuriata</p>
               </div>
             </div>
