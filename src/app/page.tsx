@@ -206,7 +206,7 @@ export default function Home() {
         </div>
         
         <div className="tech flex flex-col gap-0">
-          <h2 id="technologies" className="scroll-mt-20 text-xl font-semibold">Technologie jakie wykorzystywałem w projektach</h2>
+          <h2 id="technologies" className="scroll-mt-20 text-xl font-semibold">Technologie jakie wykorzystywałem w projektach i w pracy</h2>
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="techStack grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-9 ">
 
