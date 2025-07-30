@@ -58,7 +58,7 @@ export default function Home() {
         <div className="profile flex lg:flex-col flex-col gap-3">
 
           <h1 className="text-3xl font-semibold">Łukasz Kaliszewicz</h1>
-          <h2 className="text-base">Początkujący DevOps / IT Administrator</h2>
+          <h2 className="text-base">Administrator IT / Początkujący DevOps</h2>
           <div className="lg:w-42 2xl:w-full w-full">
             <Separator className="bg-[var(--foreground-dark)]" />
           </div>
