@@ -1,7 +1,7 @@
 'use client';
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button  } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone, BookOpenCheck } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone, BookOpenCheck, BriefcaseBusiness } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image";
 import Link from "next/link";
@@ -105,7 +105,12 @@ export default function Home() {
               <Button className="flex flex-row items-center cursor-pointer" variant="ghost" size="sm" aria-label="Linkedin" onClick={() => window.open('https://www.linkedin.com/in/%C5%82ukasz-kaliszewicz-70b543318/', '_blank')}>
                 <Linkedin className="" /> Linkedin
               </Button>
+              <Button className="flex flex-row items-center cursor-pointer" variant="ghost" size="sm" aria-label="CV">
+                <Link className="flex flex-row items-center gap-2" href={`/projekty`}><BriefcaseBusiness className="" /> Projekty</Link>
+                
+              </Button>
             </div>
+            
           </div>
         </div>
 
