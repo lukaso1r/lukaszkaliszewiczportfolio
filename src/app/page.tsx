@@ -59,12 +59,12 @@ export default function Home() {
 
           <h1 className="text-3xl font-semibold">Łukasz Kaliszewicz</h1>
           <h2 className="text-base">Administrator IT / Początkujący DevOps</h2>
-          <div className="lg:w-42 2xl:w-full w-full">
+          <div className="xl:w-42 2xl:w-full w-full">
             <Separator className="bg-[var(--foreground-dark)]" />
           </div>
           {/* <p className="text-base">Tutaj będzie krótki tekst o mnie</p> */}
 
-          <div className="flex flex-col gap-4 xl:my-6 2xl:my-0">
+          <div className="flex flex-col gap-4  2xl:my-0">
             <div className="flex flex-col items-center gap-1 mt-3">
 
               <Tooltip>
