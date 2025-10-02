@@ -12,7 +12,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   // { href: '/wyksztalcenie-i-kursy', label: 'Wykształcenie i kursy' },
   { href: '/projekty', label: 'Projekty' },
-  { href: '/miniBlog', label: 'miniBlog' },
+  // { href: '/miniBlog', label: 'miniBlog' },
   // { href: '/cv', label: 'CV' },
   // { href: '/kontakt', label: 'Kontakt' },
 ]

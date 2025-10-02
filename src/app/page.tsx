@@ -142,14 +142,13 @@ export default function Home() {
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="educationStack flex flex-col gap-4">
 
-            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between text-slate-500">
+            <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
-                <p>Oczekiwanie na wynik rekrutacji - decyzja 31.08.2025</p>
                 <h3 className="text-lg font-semibold">Studia Podyplomowe: Inżynieria cyberbezpieczeństwa</h3>
                 <p>Politechnika Warszawska Wydział Elektroniki i Technik Informacyjnych</p>
               </div>
               <div className="-order-1 xl:order-2">
-                <p>10.2025</p>
+                <p>10.2025 - 06.2026</p>
               </div>
             </div>
 
