@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['api.lukaszkaliszewicz.pl'],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
   typescript: {
     ignoreBuildErrors: false,
     tsconfigPath: './tsconfig.json'
