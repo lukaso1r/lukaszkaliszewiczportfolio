@@ -1,7 +1,7 @@
 'use client';
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button  } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone, BookOpenCheck, BriefcaseBusiness } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, CodeXml, Database, Cloud, TableOfContents, MonitorCog, EthernetPort, MonitorSmartphone, BookOpenCheck, BriefcaseBusiness, ShieldCheck } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image";
 import Link from "next/link";
@@ -58,7 +58,7 @@ export default function Home() {
         <div className="profile flex lg:flex-col flex-col gap-3">
 
           <h1 className="text-3xl font-semibold">Łukasz Kaliszewicz</h1>
-          <h2 className="text-base">Uczę i rozwijam się w obszarach Administracji IT, DevOps oraz Cyberbezpieczeństwa.</h2>
+          <h2 className="text-base">Rozwijam się w obszarach Administracji IT, DevOps oraz Cyberbezpieczeństwa.</h2>
           <div className="xl:w-42 2xl:w-full w-full">
             <Separator className="bg-[var(--foreground-dark)]" />
           </div>
@@ -138,7 +138,7 @@ export default function Home() {
       <main className="w-full px-4 md:p-0 md:w-5/6 lg:w-[90%] xl:w-4/5 flex flex-col gap-8">
 
         <div className="education">
-          <h2 id="education" className="scroll-mt-20 text-xl font-semibold">Wykształcenie i kursy</h2>
+          <h2 id="education" className="scroll-mt-20 text-xl font-semibold">Wykształcenie, certyfikaty, kursy</h2>
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
           <div className="educationStack flex flex-col gap-4">
 
@@ -173,6 +173,44 @@ export default function Home() {
             </div>
 
             <div className="flex flex-row gap-3 text-slate-400">
+                <ShieldCheck className="w-5"/> Certyfikaty
+            </div>
+
+            <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between">
+              <div className="order-last xl:order-1">
+                <h3 className="text-lg font-semibold">Microsoft: Azure Administrator Associate AZ-104</h3>
+                <p>Organizator: Microsoft</p>
+                
+              </div>
+              <div className="-order-1 xl:order-2">
+                <Image
+                  src="/azure-administrator-associate-600x600-1.png"
+                  alt="Lukasz Kaliszewicz"
+                  width={100}
+                  height={100}
+                  className="pb-3"
+                />
+              </div>
+            </div>
+
+            <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between">
+              <div className="order-last xl:order-1">
+                <h3 className="text-lg font-semibold">Microsoft 365 Certified: Endpoint Administrator Associate MD-102</h3>
+                <p>Organizator: Microsoft</p>
+              </div>
+              <div className="-order-1 xl:order-2">
+                <Image
+                  src="/microsoft-365-certified-endpoint-administrator-associate.webp"
+                  alt="Lukasz Kaliszewicz"
+                  width={100}
+                  height={100}
+                  className="pb-3"
+                />
+              </div>
+            </div>
+
+
+            <div className="flex flex-row gap-3 text-slate-400">
                 <BookOpenCheck className="w-5"/> Kursy
             </div>
 
@@ -204,7 +242,7 @@ export default function Home() {
               </div>
             </div>
 
-
+            
 
           </div>
         </div>
@@ -423,43 +461,62 @@ export default function Home() {
 
             <div className="workItem grid grid-cols-1 md:flex md:flex-row gap-y-3 md:gap-y-0 md:gap-x-10  justify-between">
               <div className="order-2 md:order-1">
-                <h3 className="text-lg font-semibold pb-2">Administrator IT, Front-end Developer REVIT sp. z o.o. Białystok</h3>
-                <p>
-                  Wsparcie i administracja IT w Centrum Zdrowia Psychicznego, stworzenie i obsługa stron internetowych,
-                  wdrażanie rozwiązań i urządzeń informatycznych, współpracowanie z firmami Diagnostyka i Comarch
-                  Healthcare, administracja systemem klasy HIS Optimed NXT, tworzenie i wdrażanie procedur, szkolenie
-                  pracowników. Udział w regularnych szkoleniach dotyczących cyfryzacji sektora medycznego oraz
-                  systemu Optimed NXT
-                </p>
+                <h3 className="text-lg font-semibold pb-2">Junior Support Specialist w Integrity Partners</h3>
+                {/* <p> */}
+                  <ul className="list-disc">
+                    <li>Wsparcie techniczne dla pracowników i klientów w zakresie infrastruktury IT, sieci oraz aplikacji.</li>
+                    <li>Zarządzanie tożsamością, uprawnieniami i dostępami użytkowników w środowiskach Microsoft 365, Azure (Entra ID, Intune, Defender, Exchange, Purview) oraz Active Directory.</li>
+                    <li>Montaż i konfiguracja rozwiązań serwerowych oraz środowisk wirtualizacyjnych (VMware ESXi, Proxmox, Hyper-V).</li>
+                    <li>Diagnozowanie i rozwiązywanie problemów infrastrukturalnych oraz sieciowych.</li>
+                    <li>Wdrażanie skryptów automatyzujących backup systemu monitoringu infrastrutkry Zabbix, w oparcu o język Bash i system Linux.</li>
+                  </ul>
               </div>
               <div className="min-w-fit ">
-                <p>11.2022 - obecnie</p>
+                <p>09.2025 - obecnie</p>
+              </div>
+            </div>
+
+            <div className="workItem grid grid-cols-1 md:flex md:flex-row gap-y-3 md:gap-y-0 md:gap-x-10  justify-between">
+              <div className="order-2 md:order-1">
+                <h3 className="text-lg font-semibold pb-2">Administrator IT, Front-end Developer REVIT sp. z o.o. Białystok</h3>
+                <ul className="list-disc">
+                  <li>Wsparcie i administracja IT w Centrum Zdrowia Psychicznego</li>
+                  <li>Tworzenie i obsługa stron internetowych</li>
+                  <li>Wdrażanie rozwiązań i urządzeń informatycznych</li>
+                  <li>Kooperacja z firmami Diagnostyka i Comarch Healthcare</li>
+                  <li>Administracja systemem klasy HIS Optimed NXT, tworzenie i wdrażanie procedur, szkolenie pracowników</li>
+                  <li>Udział w regularnych szkoleniach dotyczących cyfryzacji sektora medycznego oraz systemu Optimed NXT</li>
+                </ul>
+              </div>
+              <div className="min-w-fit ">
+                <p>11.2022 - 09.2025</p>
               </div>
             </div>
 
             <div className="workItem grid grid-cols-1 md:flex md:flex-row gap-y-3 md:gap-y-0 md:gap-x-10  justify-between">
               <div className="order-2 md:order-1">
                 <h3 className="text-lg font-semibold pb-2">Freelancer - strony, sklepy internetowe, administracja, czynności serwerowe, montaż komputerów.</h3>
-                <p>
-                  Tworzenie stron i sklepów internetowych w oparciu o Woocommerce, Shoper, Nuxt.js, React, Strapi,
-                  Vue.js. Tworzenie aplikacji mobilnych z użyciem Ionic Framework. Wdrażanie rozwiązań Qnap NAS.
-                  Tworzenie i utrzymywanie serwera gier na własnym serwerze w ramach Home Lab, wykorzystywanie
-                  Proxmox i związanej z nim konteneryzacji i wirtualizacji, obsługa Ubuntu Server. Wykorzystywanie
-                  Cloudflare R2 Bucket, serwerów VPS Mikr.us.
-                </p>
+                <ul className="list-disc">
+                  <li>Tworzenie stron i sklepów internetowych w oparciu o Woocommerce, Shoper, Nuxt.js, React, Strapi, Vue.js</li>
+                  <li>Tworzenie aplikacji mobilnych z użyciem Ionic Framework</li>
+                  <li>Wdrażanie rozwiązań Qnap NAS</li>
+                  <li>Tworzenie i utrzymywanie serwera gier na własnym serwerze w ramach Home Lab, wykorzystywanie Proxmox i związanej z nim konteneryzacji i wirtualizacji, obsługa Ubuntu Server</li>
+                  <li>Wykorzystywanie Cloudflare R2 Bucket, serwerów VPS Mikr.us</li>
+                </ul>
               </div>
               <div className="min-w-fit">
-                <p className="min-w-fit">07.2021 - obecnie</p>
+                <p className="min-w-fit">07.2021 - 09.2025</p>
               </div>
             </div>
 
             <div className="workItem grid grid-cols-1 md:flex md:flex-row gap-y-3 md:gap-y-0 md:gap-x-10  justify-between">
               <div className="order-2 md:order-1">
                 <h3 className="text-lg font-semibold pb-2">Front-end developer Centrum Wspinaczkowe FLASH Białystok</h3>
-                <p>
-                  Praktyki - wytwarzanie aplikacji mobilnej dla klientów oraz pracowników Centrum Wspinaczkowego z
-                  wykorzystaniem Nuxt, TypeScript i Ionic Framework.
-                </p>
+                <ul className="list-disc">
+                  <li>Praktyki - wytwarzanie aplikacji mobilnej dla klientów oraz pracowników Centrum Wspinaczkowego z
+                    wykorzystaniem Nuxt, TypeScript i Ionic Framework.
+                  </li>
+                </ul>
               </div>
               <div className="min-w-fit">
                 <p className="min-w-fit">03.2024 - 07.2024</p>
@@ -469,11 +526,11 @@ export default function Home() {
             <div className="workItem grid grid-cols-1 md:flex md:flex-row gap-y-3 md:gap-y-0 md:gap-x-10  justify-between">
               <div className="order-2 md:order-1">
                 <h3 className="text-lg font-semibold pb-2">Front-end Developer Stroniarz.pl Białystok</h3>
-                <p className="">
-                  Praca poprzedzona miesięcznym stażem, tworzenie, rozwijanie i zarządzanie stronami oraz sklepami
-                  internetowymi na platformie Wordpress i PrestaShop. Podstawowa obróbka zdjęć w Photoshop.
-                  Działania SEO
-                </p>
+                <ul className="list-disc">
+                  <li>Tworzenie, rozwijanie i zarządzanie stronami oraz sklepami internetowymi na platformie Wordpress i PrestaShop</li>
+                  <li>Podstawowa obróbka zdjęć w Photoshop</li>
+                  <li>Działania SEO</li>
+                </ul>
               </div>
               <div className="min-w-fit">
                 <p className="min-w-fit">02.2020 - 02.2021</p>
