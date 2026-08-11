@@ -140,7 +140,7 @@ export default function Home() {
         <div className="education">
           <h2 id="education" className="scroll-mt-20 text-xl font-semibold">Wykształcenie, certyfikaty, kursy</h2>
           <Separator className="bg-[var(--foreground-dark)] my-4 2xl:mt-2" />
-          <div className="educationStack flex flex-col gap-4">
+          <div className="educationStack flex flex-col gap-4 pt-4">
 
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
               <div className="order-last xl:order-1">
@@ -172,46 +172,77 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-row gap-3 text-slate-400">
-                <ShieldCheck className="w-5"/> Certyfikaty
+            <div className="flex flex-row gap-3 text-slate-400 text-2xl items-center pt-4">
+                <ShieldCheck className="w-7 h-7"/> Certyfikaty
             </div>
 
-            <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between">
-              <div className="order-last xl:order-1">
-                <h3 className="text-lg font-semibold">Microsoft: Azure Administrator Associate AZ-104</h3>
-                <p>Organizator: Microsoft</p>
-                
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+               <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between items-center border-2 border-[var(--foreground-dark)] rounded-md p-2">
+                <div className="w-2/5">
+                  <Image
+                    src="/azure-administrator-associate-600x600-1.png"
+                    alt="Lukasz Kaliszewicz"
+                    width={100}
+                    height={100}
+                    className=""
+                  />
+                </div>
+                <div className="">
+                  <h3 className="text-lg font-semibold">Microsoft: Azure Administrator Associate AZ-104</h3>
+                </div>
               </div>
-              <div className="-order-1 xl:order-2">
-                <Image
-                  src="/azure-administrator-associate-600x600-1.png"
-                  alt="Lukasz Kaliszewicz"
-                  width={100}
-                  height={100}
-                  className="pb-3"
-                />
+               
+              <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between items-center border-2 border-[var(--foreground-dark)] rounded-md p-2">
+                <div className="w-2/5">
+                  <Image
+                    src="/microsoft-365-certified-endpoint-administrator-associate.webp"
+                    alt="Lukasz Kaliszewicz"
+                    width={100}
+                    height={100}
+                    className=""
+                  />
+                </div>
+                <div className="">
+                  <h3 className="text-lg font-semibold">Microsoft 365 Certified: Endpoint Administrator Associate MD-102</h3>
+                </div>
               </div>
-            </div>
+            </div>   
 
-            <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between">
-              <div className="order-last xl:order-1">
-                <h3 className="text-lg font-semibold">Microsoft 365 Certified: Endpoint Administrator Associate MD-102</h3>
-                <p>Organizator: Microsoft</p>
+
+              {/* <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between">
+                <div className="">
+                  <h3 className="text-lg font-semibold">Microsoft: Azure Administrator Associate AZ-104</h3>
+                  
+                </div>
+                <div className="">
+                  <Image
+                    src="/azure-administrator-associate-600x600-1.png"
+                    alt="Lukasz Kaliszewicz"
+                    width={100}
+                    height={100}
+                    className="pb-3"
+                  />
+                </div>
               </div>
-              <div className="-order-1 xl:order-2">
-                <Image
-                  src="/microsoft-365-certified-endpoint-administrator-associate.webp"
-                  alt="Lukasz Kaliszewicz"
-                  width={100}
-                  height={100}
-                  className="pb-3"
-                />
-              </div>
-            </div>
+
+              <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between">
+                <div className="">
+                  <h3 className="text-lg font-semibold">Microsoft 365 Certified: Endpoint Administrator Associate MD-102</h3>
+                </div>
+                <div className="">
+                  <Image
+                    src="/microsoft-365-certified-endpoint-administrator-associate.webp"
+                    alt="Lukasz Kaliszewicz"
+                    width={100}
+                    height={100}
+                    className="pb-3"
+                  />
+                </div>
+              </div> */}
 
 
-            <div className="flex flex-row gap-3 text-slate-400">
-                <BookOpenCheck className="w-5"/> Kursy
+            <div className="flex flex-row gap-3 text-slate-400 text-2xl items-center pt-4">
+                <BookOpenCheck className="w-7 h-7"/> Kursy
             </div>
 
             <div className="educationItem grid grid-cols-1 xl:flex xl:flex-row gap-2 justify-between">
