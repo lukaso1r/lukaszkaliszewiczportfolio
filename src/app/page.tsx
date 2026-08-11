@@ -176,15 +176,15 @@ export default function Home() {
                 <ShieldCheck className="w-7 h-7"/> Certyfikaty
             </div>
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
-               <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between items-center border-2 border-[var(--foreground-dark)] rounded-md p-2">
-                <div className="w-2/5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+               <div className="educationItem flex flex-row lg:gap-2 gap-10 justify-start items-center border-2 border-[var(--foreground-dark)] rounded-md p-2">
+                <div className="lg:w-2/5">
                   <Image
                     src="/azure-administrator-associate-600x600-1.png"
                     alt="Lukasz Kaliszewicz"
                     width={100}
                     height={100}
-                    className=""
+                    className="w-40 md:w-full"
                   />
                 </div>
                 <div className="">
@@ -192,14 +192,14 @@ export default function Home() {
                 </div>
               </div>
                
-              <div className="educationItem grid grid-cols-2 xl:flex xl:flex-row gap-2 justify-between items-center border-2 border-[var(--foreground-dark)] rounded-md p-2">
-                <div className="w-2/5">
+              <div className="educationItem flex flex-row lg:gap-2 gap-10 justify-start items-center border-2 border-[var(--foreground-dark)] rounded-md p-2">
+                <div className="lg:w-2/5">
                   <Image
                     src="/microsoft-365-certified-endpoint-administrator-associate.webp"
                     alt="Lukasz Kaliszewicz"
                     width={100}
                     height={100}
-                    className=""
+                    className="w-48 md:w-full"
                   />
                 </div>
                 <div className="">
